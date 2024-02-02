@@ -2,7 +2,7 @@ package net.qwew.testmod;
 
 import net.fabricmc.api.ModInitializer;
 
-import net.qwew.testmod.item.ModItems;
+import net.qwew.testmod.item.TestModRegistry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -12,6 +12,6 @@ public class TestMod implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		ModItems.registerModItems();
+		TestModRegistry.registerModItems();
 	}
 }
