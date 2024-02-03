@@ -11,12 +11,17 @@ import net.minecraft.util.Identifier;
 
 import net.qwew.testmod.TestMod;
 
-public class TestModRegistry {
+public class TestModItemRegistry {
 
     public static final Item POOP = registerItem("poop", new Item(new FabricItemSettings()));
+    public static final Item ZEWA = registerItem("zewa", new Item(new FabricItemSettings()));
 
-    private static void addItemsToIngredientItemGroup(FabricItemGroupEntries entries) {
+    private static void addItemsToFoodDrinkItemGroup(FabricItemGroupEntries entries) {
         entries.add(POOP);
+    }
+
+    private static void addItemsToToolsItemGroup(FabricItemGroupEntries entries) {
+        entries.add(ZEWA);
     }
 
     private static Item registerItem(String name, Item item) {
@@ -26,6 +31,7 @@ public class TestModRegistry {
     public static void registerModItems() {
         TestMod.LOGGER.info("--REGISTERING TESTMOD ITEMS--");
 
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register(TestModRegistry::addItemsToIngredientItemGroup);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register(TestModItemRegistry::addItemsToFoodDrinkItemGroup);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(TestModItemRegistry::addItemsToToolsItemGroup);
     }
 }
