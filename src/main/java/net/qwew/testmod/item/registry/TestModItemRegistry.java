@@ -1,4 +1,4 @@
-package net.qwew.testmod.item;
+package net.qwew.testmod.item.registry;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
@@ -10,11 +10,12 @@ import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 
 import net.qwew.testmod.TestMod;
+import net.qwew.testmod.item.PoopItem;
 
 public class TestModItemRegistry {
 
-    public static final Item POOP = registerItem("poop", new Item(new FabricItemSettings()));
-    public static final Item ZEWA = registerItem("zewa", new Item(new FabricItemSettings()));
+    private static final Item POOP = registerItem("poop", new PoopItem());
+    private static final Item ZEWA = registerItem("zewa", new Item(new FabricItemSettings()));
 
     private static void addItemsToFoodDrinkItemGroup(FabricItemGroupEntries entries) {
         entries.add(POOP);

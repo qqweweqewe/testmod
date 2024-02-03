@@ -2,7 +2,7 @@ package net.qwew.testmod;
 
 import net.fabricmc.api.ModInitializer;
 
-import net.qwew.testmod.item.TestModItemRegistry;
+import net.qwew.testmod.item.registry.TestModItemRegistry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
