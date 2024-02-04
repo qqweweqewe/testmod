@@ -13,8 +13,8 @@ public class PoopItem extends Item {
                 .hunger(4)
                 .saturationModifier(0.4f)
                 .meat()
-                .statusEffect(new StatusEffectInstance(StatusEffects.SPEED, 120, 255), 1)
-                .statusEffect(new StatusEffectInstance(StatusEffects.NAUSEA, 120, 255), 1)
+                .statusEffect(new StatusEffectInstance(StatusEffects.SPEED, 12000, 255), 1)
+                .statusEffect(new StatusEffectInstance(StatusEffects.NAUSEA, 12000, 255), 1)
                 .build()));
     }
 }
