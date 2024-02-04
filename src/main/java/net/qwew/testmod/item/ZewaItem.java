@@ -16,25 +16,17 @@ import java.util.Random;
 
 public class ZewaItem extends Item {
 
-    private double recoil;
-    private int load;
+    public double recoil = 0.6f;
+    public int load = 1;
 
     public ZewaItem() {
         super(new FabricItemSettings());
-        this.recoil = 1;
-        this.load = 1;
     }
 
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity player, Hand hand) {
 
-        // Drop the load
-        ItemStack poopStack = new ItemStack(
-                Registries.ITEM.get(new Identifier(TestMod.MOD_ID, "poop")),
-                new Random().nextInt(2)+load
-        );
-
-        player.dropItem(poopStack, true);
+        dropTheload(player, load);
 
         // Yeet upwards
         player.addVelocity(0d, recoil, 0d);
@@ -45,6 +37,15 @@ public class ZewaItem extends Item {
 
         // Return the whatever
         return TypedActionResult.success(zewaStack);
+    }
+
+    private void dropTheload(PlayerEntity player, int quantity) {
+        ItemStack poopStack = new ItemStack(
+                Registries.ITEM.get(new Identifier(TestMod.MOD_ID, "poop")),
+                new Random().nextInt(2)+quantity
+        );
+
+        player.dropItem(poopStack, true);
     }
 
 }

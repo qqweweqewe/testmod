@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ggg",
+    "gzg",
+    "ggg"
+  ],
+  "key": {
+    "g": {
+      "item": "minecraft:gold_block"
+    },
+    "z": {
+      "item": "testmod:zewa"
+    }
+  },
+  "result": {
+    "item": "testmod:legendary_zewa"
+  }
+}

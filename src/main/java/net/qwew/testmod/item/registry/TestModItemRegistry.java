@@ -9,6 +9,7 @@ import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 
 import net.qwew.testmod.TestMod;
+import net.qwew.testmod.item.LegendaryZewaItem;
 import net.qwew.testmod.item.PoopItem;
 import net.qwew.testmod.item.ZewaItem;
 
@@ -16,6 +17,7 @@ public class TestModItemRegistry {
 
     private static final Item POOP = registerItem("poop", new PoopItem());
     private static final Item ZEWA = registerItem("zewa", new ZewaItem());
+    private static final Item LEGENDARY_ZEWA = registerItem("legendary_zewa", new LegendaryZewaItem());
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, new Identifier(TestMod.MOD_ID, name), item);
@@ -27,5 +29,6 @@ public class TestModItemRegistry {
         //Adding items to item groups
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register(entries -> entries.add(POOP));
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(entries -> entries.add(ZEWA));
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(entries -> entries.add(LEGENDARY_ZEWA));
     }
 }
